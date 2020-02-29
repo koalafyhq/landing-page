@@ -32,7 +32,13 @@ a static website, run this following command:
 yarn export
 ```
 
-The build directory will lives with name `out`. We can deploy it to PaaS like
+If `.next` directory is not exists, you need to build it first:
+
+```bash
+yarn build
+```
+
+The build (generated) directory will lives with name `out`. We can deploy it to PaaS like
 Netlify & Zeit Now or to our own infra.
 
 ## License
@@ -61,5 +67,3 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
 
 ```
-
-
