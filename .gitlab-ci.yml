@@ -1,0 +1,44 @@
+image: docker:stable
+
+services:
+  - docker:dind
+
+variables:
+  IMAGE_BASE: registry.gitlab.com/koalafy/landing-page
+
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+build:
+  stage: build
+  script:
+    - docker build -t $IMAGE_BASE/backend:$CI_COMMIT_SHA .
+    - docker push $IMAGE_BASE/backend:$CI_COMMIT_SHA
+
+test:
+  stage: test
+  only:
+    refs:
+      - master
+  script:
+    - apk update && apk add nodejs yarn
+    - docker pull $IMAGE_BASE/backend:$CI_COMMIT_SHA
+    - docker run $IMAGE_BASE/backend:$CI_COMMIT_SHA node -e "console.log('skip')"
+
+release:
+  stage: release
+  script:
+    - docker pull $IMAGE_BASE:$CI_COMMIT_SHA
+    - docker tag $IMAGE_BASE:$CI_COMMIT_SHA $IMAGE_BASE:latest
+    - docker push $IMAGE_BASE:latest
+
+deploy:
+  stage: deploy
+  only:
+    refs:
+      - master
+  script:
+    - echo "[deploy] skip"
