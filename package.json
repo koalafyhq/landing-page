@@ -1,0 +1,27 @@
+{
+  "name": "@koalafy/landing-page",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "next start",
+    "dev": "next dev",
+    "export": "next export"
+  },
+  "dependencies": {
+    "next": "^9.2.2",
+    "nprogress": "^0.2.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0"
+  },
+  "devDependencies": {
+    "babel-plugin-root-import": "^6.4.1",
+    "prettier": "^1.19.1",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
