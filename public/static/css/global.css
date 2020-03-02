@@ -1,3 +1,23 @@
+/*
+ * design token based on Figma's design
+ * format: --<scope>-modifier
+ *
+ */
+
+:root {
+  --color-primary: #ff7b7b;
+  --color-secondary: #00072e;
+  --color-gray: #fdfdfd;
+  --color-white: #ffffff;
+  --color-black: #333333;
+  --font-sans-serif: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: 'IBM Plex Serif', serif;
+  --font-monospace: 'Operator Mono', 'IBM Plex Mono', monospace;
+  --transition-common: 0.2s all;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -9,7 +29,7 @@
 }
 
 #nprogress .bar {
-  background: red;
+  background: var(--color-primary);
   position: fixed;
   z-index: 666;
   top: 0;
@@ -23,11 +43,9 @@ body {
   -webkit-font-smoothing: antialiased;
   padding: 0;
   margin: 0;
-  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: var(--font-sans-serif);
   font-size: 16px;
-  color: #333;
+  color: var(--color-black);
 }
 
 .cf:before,
