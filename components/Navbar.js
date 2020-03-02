@@ -45,11 +45,11 @@ const HamburgerMenu = ({ isFocus, onClick }) => (
   </button>
 )
 
-const Menu = ({ isVisible, menus }) => (
+const Menu = ({ onClick, isVisible, menus }) => (
   <div className={`c-menu ${isVisible ? 'c-menu--is-visible' : ''}`}>
     {menus.map(menu => (
-      <Link href={menu.toLowerCase()} key={menu}>
-        <a>{menu}</a>
+      <Link href={menu === 'Home' ? '/' : menu.toLowerCase()} key={menu}>
+        <a onClick={onClick}>{menu}</a>
       </Link>
     ))}
     <style jsx>{`
@@ -80,8 +80,8 @@ const Menu = ({ isVisible, menus }) => (
         margin-bottom: 1rem;
         display: block;
         font-weight: bold;
-        transition: 0.5s transform ease-in-out, 0.3s color;
-        transform: translate(0, 666px);
+        transition: 0.3s transform ease-in-out, 0.3s color;
+        transform: translate(0, 100px);
       }
 
       .c-menu--is-visible a {
@@ -97,34 +97,42 @@ const Menu = ({ isVisible, menus }) => (
 
 const Navbar = () => {
   const menus = ['Home', 'About', 'Services', 'Blog']
-  const [menuVisible, setMenuVisible] = useState(true)
+  const [menuVisible, setMenuVisible] = useState(false)
 
   const toggleMenuVisiblity = () => setMenuVisible(isVisible => !isVisible)
 
   return (
     <nav className='c-navbar cf'>
-      <div className='c-navbar__left'>
-        <Link href='/'>
-          <a>
-            <img
-              src='/static/img/logotype_light.png'
-              width='120'
-              alt='Koalafy'
-            />
-          </a>
-        </Link>
-      </div>
-      <div className='c-navbar__right'>
-        <HamburgerMenu isFocus={menuVisible} onClick={toggleMenuVisiblity} />
-        <Menu isVisible={menuVisible} menus={menus} />
+      <div className='o-container'>
+        <div className='c-navbar__left'>
+          <Link href='/'>
+            <a>
+              <img
+                src='/static/img/logotype_light.png'
+                width='160'
+                alt='Koalafy'
+              />
+            </a>
+          </Link>
+        </div>
+        <div className='c-navbar__right'>
+          <HamburgerMenu isFocus={menuVisible} onClick={toggleMenuVisiblity} />
+          <Menu
+            onClick={toggleMenuVisiblity}
+            isVisible={menuVisible}
+            menus={menus}
+          />
+        </div>
       </div>
       <style jsx>{`
+        img {
+          margin-left: -10px; // to keep consistent across spacing
+        }
+
         .c-navbar {
           background-color: var(--color-secondary);
           color: #fff;
-          padding: 25px 25px;
-          font-weight: bold;
-          margin-bottom: 1rem;
+          padding: 30px 20px;
         }
 
         .c-navbar__left {
