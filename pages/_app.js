@@ -21,7 +21,6 @@ class Layout extends React.Component {
         <style jsx>{`
           div {
             min-height: 100vh;
-            padding: 1rem;
           }
         `}</style>
       </>
