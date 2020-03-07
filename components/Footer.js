@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ButtonLink from '~/components/ButtonLink'
 
 const Footer = () => {
   const companyLinks = ['Home', 'About', 'Contact', 'Blog', 'Privacy']
@@ -47,7 +48,10 @@ const Footer = () => {
               <h3>Services</h3>
               <div className='c-links'>
                 {services.map(service => (
-                  <Link href={service.toLowerCase()} key={service}>
+                  <Link
+                    href={service.replace(/\s+/g, '-').toLowerCase()}
+                    key={service}
+                  >
                     <a>{service}</a>
                   </Link>
                 ))}
@@ -56,9 +60,16 @@ const Footer = () => {
           </div>
           <div className='c-footer__copyright'>
             <p>
-              &copy; {new Date().getFullYear()}, <a href='/'>koalify.co</a> -
-              All right reserved, Icons by{' '}
-              <a href='https://icons8.com/' target='_blank'>
+              &copy; {new Date().getFullYear()},{' '}
+              <Link href='/'>
+                <a className='u-underline'>koalify.co</a>
+              </Link>{' '}
+              - All right reserved, Icons by{' '}
+              <a
+                href='https://icons8.com/'
+                className='u-underline'
+                target='_blank'
+              >
                 Icons8
               </a>{' '}
             </p>
@@ -68,30 +79,32 @@ const Footer = () => {
 
       <style jsx>{`
         footer {
-          padding: 30px 10px;
-          background-color: #000;
+          background-color: var(--color-secondary);
           color: #fff;
         }
 
         .c-footer__content {
           height: 870px;
+          padding: 30px 10px;
         }
 
         .c-footer__copyright {
           text-align: left;
-          height: 20px;
-          max-height: 50px;
+          height: 90px;
+          padding: 0 10px;
         }
 
         .left {
           float: left;
           width: 100%;
+          margin-bottom: 10px;
         }
 
         .right {
           float: left;
           width: 100%;
           text-align: left;
+          margin-bottom: 10px;
         }
 
         .center {
@@ -99,6 +112,7 @@ const Footer = () => {
           text-align: left;
           display: inline-block;
           width: 100%;
+          margin-bottom: 10px;
         }
 
         .c-description {
@@ -110,7 +124,6 @@ const Footer = () => {
         }
 
         .c-links a {
-          color: var(--color-white);
           display: block;
           font-size: 1.3rem;
           line-height: 1.7rem;
@@ -119,6 +132,10 @@ const Footer = () => {
 
         .c-links a:hover {
           text-decoration: underline;
+        }
+
+        a {
+          color: var(--color-white);
         }
 
         img {
@@ -136,13 +153,21 @@ const Footer = () => {
           line-height: 1.7rem;
         }
 
-        @media screen and (min-width: 767px) {
+        @media screen and (min-width: 768px) {
           .c-footer__content {
             height: 300px;
           }
 
           .c-footer__copyright {
-            text-align: center;
+            position: relative;
+          }
+
+          .c-footer__copyright p {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            margin-left: -200px;
+            left: 50%;
           }
 
           .left {
