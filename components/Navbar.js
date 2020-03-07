@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+import Router from 'next/router'
 import Link from 'next/link'
 
 const HamburgerMenu = ({ isFocus, onClick }) => (
@@ -98,6 +100,18 @@ const Menu = ({ onClick, isVisible, menus }) => (
 const Navbar = () => {
   const menus = ['Home', 'About', 'Services', 'Blog']
   const [menuVisible, setMenuVisible] = useState(false)
+
+  useEffect(() => {
+    const hideMenuVisibility = () => {
+      if (menuVisible) setMenuVisible(false)
+    }
+
+    Router.events.on('routeChangeStart', hideMenuVisibility)
+
+    return () => {
+      Router.events.off('routeChangeStart', hideMenuVisibility)
+    }
+  }, [menuVisible])
 
   const toggleMenuVisiblity = () => setMenuVisible(isVisible => !isVisible)
 
