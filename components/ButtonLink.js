@@ -14,7 +14,7 @@ const ButtonLink = ({ pilled, children, href }) => (
         font-weight: bold;
         color: #ffffff;
         letter-spacing: 1px;
-        padding: ${pilled ? '17px' : '15px'};
+        padding: ${pilled ? '15px 17px' : '15px'};
         border-radius: ${pilled ? '999px' : '3px'};
         background-color: var(--color-primary);
         border: 1px solid var(--color-primary);
