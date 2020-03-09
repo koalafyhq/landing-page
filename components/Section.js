@@ -1,41 +1,53 @@
 const Section = ({ isImageInLeft = true, isCenter, children, Left, Right }) => (
-  <section className='o-container'>
-    <div className='o-section__content'>
-      {isCenter ? (
-        <div className='o-section__center'>{children}</div>
-      ) : (
-        <>
-          <div
-            className={`o-section__left ${
-              isImageInLeft ? '' : 'o-section__left--is-reversed'
-            }`}
-          >
-            <Left />
-          </div>
-          <div
-            className={`o-section__right ${
-              isImageInLeft ? '' : 'o-section__right--is-reversed'
-            }`}
-          >
-            <Right />
-          </div>
-        </>
-      )}
+  <section
+    className={`o-sections ${isCenter ? 'o-sections--has-white-bg' : ''}`}
+  >
+    <div className='o-container o-section'>
+      <div className='o-section__content'>
+        {isCenter ? (
+          <div className='o-section__center'>{children}</div>
+        ) : (
+          <>
+            <div
+              className={`o-section__left ${
+                isImageInLeft ? '' : 'o-section__left--is-reversed'
+              }`}
+            >
+              <Left />
+            </div>
+            <div
+              className={`o-section__right ${
+                isImageInLeft ? '' : 'o-section__right--is-reversed'
+              }`}
+            >
+              <Right />
+            </div>
+          </>
+        )}
+      </div>
     </div>
     <style jsx global>{`
-      section {
+      .o-sections {
+        background-color: var(--color-gray);
+      }
+
+      .o-sections--has-white-bg {
+        background-color: var(--color-white);
+      }
+
+      .o-section {
         padding: 4rem 0;
         display: table;
         width: 100%;
       }
 
-      section h3 {
+      .o-section h3 {
         margin-top: 2rem;
         font-size: 2.3rem;
         letter-spacing: -1.5px;
       }
 
-      section p {
+      .o-section p {
         line-height: 1.8rem;
         margin-top: 1rem;
         font-size: 1.2rem;
@@ -67,11 +79,11 @@ const Section = ({ isImageInLeft = true, isCenter, children, Left, Right }) => (
       }
 
       @media screen and (min-width: 640px) {
-        section h3 {
+        .o-section h3 {
           font-size: 2.8rem;
         }
 
-        section p {
+        .o-section p {
           font-size: 1.3rem;
         }
 
