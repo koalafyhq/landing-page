@@ -159,15 +159,7 @@ const Footer = () => {
           }
 
           .c-footer__copyright {
-            position: relative;
-          }
-
-          .c-footer__copyright p {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            margin-left: -200px;
-            left: 50%;
+            text-align: center;
           }
 
           .left {
