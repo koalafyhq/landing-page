@@ -162,7 +162,6 @@ const Footer = () => {
             text-align: center;
           }
 
-
           .left {
             width: 50%;
           }
