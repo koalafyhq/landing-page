@@ -72,6 +72,92 @@ const SectionThree = ({ isImage }) => (
   </>
 )
 
+const SectionFour = () => (
+  <div>
+    <h2>Partnering with best in class Frontend Engineers in town</h2>
+    <p>
+      Our main focus is building blazing fast website with good User Experience
+      and Developer Experience. Since performance is part of User Experience,
+      you got the point.
+    </p>
+    <ButtonLink pilled={false} href='/contact'>
+      Tell us your project
+    </ButtonLink>
+    <style jsx>
+      {`
+        .o-sections.o-sections--has-white-bg {
+          background-color: var(--color-secondary);
+        }
+        p {
+          color: var(--color-white);
+        }
+      `}
+    </style>
+  </div>
+)
+
+const SectionFive = ({ isImage }) => (
+  <>
+    {isImage ? (
+      <img
+        src='/static/img/pluto-success.png'
+        alt='Check out our services page'
+      />
+    ) : (
+      <>
+        <h3>
+          Check out our{' '}
+          <Link href='/services'>
+            <a className='u-underline'>services page</a>
+          </Link>
+        </h3>
+        <p>Learn more what we do & don’t, in case you need to.</p>
+        <p>
+          There is{' '}
+          <Link href='/about'>
+            <a className='u-underline'>About page</a>
+          </Link>{' '}
+          to learn more who we are, how we work and principles we have.
+        </p>
+        <p>
+          We also write{' '}
+          <Link href='/blog'>
+            <a className='u-underline'>blog posts</a>
+          </Link>
+          , to share insights; Tips & tricks, and what we’ve learned in order to
+          make website faster, better, and more fun.
+        </p>
+      </>
+    )}
+    <style jsx>
+      {`
+        @media screen and (min-width: 640px) {
+          img {
+            margin-top: -7rem;
+          }
+        }
+      `}
+    </style>
+  </>
+)
+
+const SectionSix = () => (
+  <div>
+    <h3>You’ve reached here, now what?</h3>
+    <p>
+      We try our best, from architecting IA; choosing honest & friendly
+      copywriting, until to make this website as fast as we’ve promised earlier.
+    </p>
+    <p>
+      Deliberate to not mention that we are also good in SEO since SEO is the
+      essential aspect for digital business after security.
+    </p>
+    <ButtonLink pilled={true} href='/contact'>
+      Work with us
+    </ButtonLink>
+  </div>
+)
+
 const IndexPage = () => {
   return (
     <main>
@@ -98,6 +184,36 @@ const IndexPage = () => {
         Right={() => <SectionThree isImage={true} />}
         Left={() => <SectionThree />}
       ></Section>
+
+      <Section
+        isCenter={true}
+        style={{ backgroundColor: 'var(--color-secondary)' }}
+      >
+        <SectionFour />
+      </Section>
+
+      <Section
+        style={{ marginBottom: '-14px' }}
+        isImageInLeft={true}
+        Left={() => <SectionFive isImage={true} />}
+        Right={() => <SectionFive />}
+      />
+
+      <svg
+        viewBox='0 0 1440 68'
+        enableBackground='new 0 0 1440 68'
+        style={{ marginTop: '-55px' }}
+      >
+        <path
+          d='m1622.3 1937.7c0 0-410.7 169.1-913.4 75.5-502.7-93.6-977.7 56.3-977.7 56.3v440h1891.1v-571.8'
+          fill='#FFFFFF'
+          transform='translate(0-1977)'
+        ></path>
+      </svg>
+
+      <Section isCenter={true}>
+        <SectionSix />
+      </Section>
     </main>
   )
 }

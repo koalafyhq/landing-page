@@ -13,15 +13,19 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className='c-footer'>
+      <div className='c-footer cf'>
         <div className='o-container'>
-          <div className='c-footer__content'>
+          <div className='c-footer__content cf'>
             <div className='left'>
-              <img
-                src='/static/img/logotype_light.png'
-                width='160'
-                alt='Koalafy Footer Logo'
-              />
+              <Link href='/'>
+                <a>
+                  <img
+                    src='/static/img/logotype_light.png'
+                    width='160'
+                    alt='Koalafy Footer Logo'
+                  />
+                </a>
+              </Link>
               <div className='c-description'>
                 <p>
                   Jakarta HQ: Go Work — Plaza Indonesia, Level 5 Unit E021AB,
@@ -49,10 +53,19 @@ const Footer = () => {
               <div className='c-links'>
                 {services.map(service => (
                   <Link
-                    href={service.replace(/\s+/g, '-').toLowerCase()}
+                    href={`services/${service
+                      .replace(/\s+/g, '-')
+                      .toLowerCase()}`}
                     key={service}
                   >
-                    <a>{service}</a>
+                    {service === 'Dedicated Hosting' ? (
+                      <a className='c-links--with-label'>
+                        {service}
+                        {service === 'Dedicated Hosting' && <span>Beta</span>}
+                      </a>
+                    ) : (
+                      <a>{service}</a>
+                    )}
                   </Link>
                 ))}
               </div>
@@ -62,7 +75,7 @@ const Footer = () => {
             <p>
               &copy; {new Date().getFullYear()},{' '}
               <Link href='/'>
-                <a className='u-underline'>koalify.co</a>
+                <a className='u-underline'>koalafy.co</a>
               </Link>{' '}
               - All right reserved, Icons by{' '}
               <a
@@ -71,7 +84,7 @@ const Footer = () => {
                 target='_blank'
               >
                 Icons8
-              </a>{' '}
+              </a>
             </p>
           </div>
         </div>
@@ -83,15 +96,26 @@ const Footer = () => {
           color: #fff;
         }
 
+        span {
+          background-color: var(--color-primary);
+          margin-left: 4px;
+          display: inline-block;
+          padding: 0.2rem 0.4rem;
+          font-size: 0.8rem;
+          line-height: 0.8rem;
+          text-align: center;
+          white-space: nowrap;
+          vertical-align: top;
+          border-radius: 3px;
+        }
+
         .c-footer__content {
-          height: 870px;
           padding: 30px 10px;
         }
 
         .c-footer__copyright {
           text-align: left;
-          height: 90px;
-          padding: 0 10px;
+          padding: 0 0 2rem 10px;
         }
 
         .left {
@@ -125,7 +149,7 @@ const Footer = () => {
 
         .c-links a {
           display: block;
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           line-height: 1.7rem;
           margin-bottom: 10px;
         }
@@ -143,8 +167,10 @@ const Footer = () => {
         }
 
         h3 {
-          font-size: 2rem;
+          font-size: 1.8rem;
           letter-spacing: -1.5px;
+          line-height: 1.3rem;
+          margin-top: 1.5rem;
         }
 
         p {
@@ -154,12 +180,19 @@ const Footer = () => {
         }
 
         @media screen and (min-width: 768px) {
-          .c-footer__content {
-            height: 300px;
+          h3 {
+            line-height: normal;
+            font-size: 2rem;
+            margin-top: 0;
           }
 
           .c-footer__copyright {
             text-align: center;
+            padding: 1rem 0;
+          }
+
+          .c-links a {
+            font-size: 1.3rem;
           }
 
           .left {

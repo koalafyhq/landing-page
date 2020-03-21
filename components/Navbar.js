@@ -47,13 +47,14 @@ const HamburgerMenu = ({ isFocus, onClick }) => (
   </button>
 )
 
-const Menu = ({ onClick, isVisible, menus }) => (
+const Menu = ({ onClick, isVisible, menus, children }) => (
   <div className={`c-menu ${isVisible ? 'c-menu--is-visible' : ''}`}>
     {menus.map(menu => (
       <Link href={menu === 'Home' ? '/' : menu.toLowerCase()} key={menu}>
         <a onClick={onClick}>{menu}</a>
       </Link>
     ))}
+    <div className='c-menu__extra'>{children}</div>
     <style jsx>{`
       .c-menu {
         background: var(--color-primary);
@@ -69,6 +70,7 @@ const Menu = ({ onClick, isVisible, menus }) => (
         visibility: hidden;
         width: 300px;
         height: 350px;
+        box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
       }
 
       .c-menu--is-visible {
@@ -92,6 +94,10 @@ const Menu = ({ onClick, isVisible, menus }) => (
 
       .c-menu a:hover {
         color: var(--color-secondary);
+      }
+
+      .c-menu__extra {
+        margin-top: 4rem;
       }
     `}</style>
   </div>
@@ -135,7 +141,12 @@ const Navbar = () => {
             onClick={toggleMenuVisiblity}
             isVisible={menuVisible}
             menus={menus}
-          />
+          >
+            <h4>Get in touch</h4>
+            <p>
+              <a href='mailto:hi@koalafy.co'>hi@koalafy.co</a>
+            </p>
+          </Menu>
         </div>
       </div>
       <style jsx>{`
@@ -159,6 +170,19 @@ const Navbar = () => {
           width: 70%;
           text-align: right;
           position: relative;
+        }
+
+        p {
+          line-height: 2.3rem;
+          font-size: 1.3rem;
+        }
+
+        p a {
+          color: #fff;
+        }
+
+        p a:hover {
+          text-decoration: underline;
         }
       `}</style>
     </nav>
