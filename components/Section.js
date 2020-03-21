@@ -1,5 +1,13 @@
-const Section = ({ isImageInLeft = true, isCenter, children, Left, Right }) => (
+const Section = ({
+  isImageInLeft = true,
+  isCenter,
+  children,
+  Left,
+  Right,
+  ...props
+}) => (
   <section
+    {...props}
     className={`o-sections ${isCenter ? 'o-sections--has-white-bg' : ''}`}
   >
     <div className='o-container o-section'>
@@ -44,6 +52,12 @@ const Section = ({ isImageInLeft = true, isCenter, children, Left, Right }) => (
       .o-section h3 {
         margin-top: 2rem;
         font-size: 2.3rem;
+        letter-spacing: -1.5px;
+      }
+
+      .o-section h2 {
+        color: var(--color-primary);
+        font-size: 3rem;
         letter-spacing: -1.5px;
       }
 
