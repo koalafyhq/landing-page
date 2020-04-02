@@ -2,7 +2,7 @@ import Link from 'next/link'
 import ButtonLink from '~/components/ButtonLink'
 
 const Footer = () => {
-  const companyLinks = ['Home', 'About', 'Contact', 'Blog', 'Privacy']
+  const companyLinks = ['Home', 'About', 'Contact', 'Blog', 'Services']
   const services = [
     'JAMStack Website',
     'Progressive Web App',
