@@ -16,7 +16,7 @@ const HamburgerMenu = ({ isFocus, onClick }) => (
         position: relative;
         transition: var(--transition-common);
         width: 50px;
-        z-index: 1;
+        z-index: 2;
       }
 
       button:hover,
@@ -71,6 +71,7 @@ const Menu = ({ onClick, isVisible, menus, children }) => (
         width: 300px;
         height: 350px;
         box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+        z-index: 1;
       }
 
       .c-menu--is-visible {
