@@ -11,7 +11,7 @@ const HeroBase = ({ children }) => (
         width: 100%;
         background-color: var(--color-secondary);
         color: var(--color-white);
-        text-align: center;
+         text-align: center;
       }
 
       .c-hero__content {
@@ -45,6 +45,34 @@ const HeroBase = ({ children }) => (
         }
     `}</style>
   </div>
+)
+
+export const HeroCenter = ({ title, description }) => (
+  <>
+    <HeroBase>
+      <div className='center'>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
+    </HeroBase>
+    <style jsx global>{`
+      .c-hero__content {
+        height: 350px;
+      }
+
+      .center {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+      }
+
+      @media screen and (min-width: 640px) {
+        .center {
+          width: 60%;
+        }
+      }
+    `}</style>
+  </>
 )
 
 export const HeroWithHighlight = ({
