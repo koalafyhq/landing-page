@@ -105,15 +105,27 @@ const SectionFive = ({ isImage }) => (
       />
     ) : (
       <>
-        <h3>Check out our <Link href='/services'><a className='u-underline'>services page</a></Link></h3>
+        <h3>
+          Check out our{' '}
+          <Link href='/services'>
+            <a className='u-underline'>services page</a>
+          </Link>
+        </h3>
         <p>Learn more what we do & don’t, in case you need to.</p>
         <p>
-          There is <Link href='/about'><a className='u-underline'>About page</a></Link> to learn more who we are, how we work and
-          principles we have.
+          There is{' '}
+          <Link href='/about'>
+            <a className='u-underline'>About page</a>
+          </Link>{' '}
+          to learn more who we are, how we work and principles we have.
         </p>
         <p>
-          We also write <Link href='/blog'><a className='u-underline'>blog posts</a></Link>, to share insights; Tips & tricks, and what
-          we’ve learned in order to make website faster, better, and more fun.
+          We also write{' '}
+          <Link href='/blog'>
+            <a className='u-underline'>blog posts</a>
+          </Link>
+          , to share insights; Tips & tricks, and what we’ve learned in order to
+          make website faster, better, and more fun.
         </p>
       </>
     )}
