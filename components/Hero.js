@@ -33,6 +33,10 @@ const HeroBase = ({ children }) => (
         color: var(--color-white);
       }
 
+      .c-hero--color-primary h2 {
+        color: var(--color-primary);
+      }
+
       .c-hero p {
         font-size: 1.3rem;
         margin-top: 1rem;
@@ -79,16 +83,19 @@ export const HeroWithHighlight = ({
   title,
   description,
   highlight,
-  background
+  image,
+  isHighlight
 }) => (
   <HeroBase>
-    <div className='c-hero--color-white'>
+    <div
+      className={isHighlight ? 'c-hero--color-white' : 'c-hero--color-primary'}
+    >
       <h2>
         {title} <span className='highlight'>{highlight}</span>
       </h2>
       <p>{description}</p>
       <div className='o-image-container'>
-        <img src='/static/img/pluto-come-back-later.png' />
+        <img src={image} />
       </div>
       <style jsx>{`
         .o-image-container {
@@ -117,7 +124,7 @@ export const HeroWithHighlight = ({
 
         @media screen and (min-width: 640px) {
           p {
-            width: 55%;
+            width: 58%;
             margin-bottom: 15rem;
           }
 

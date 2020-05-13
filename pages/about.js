@@ -108,6 +108,8 @@ const IndexPage = () => (
       title='Make a web '
       highlight='faster & safer'
       description='We are passionate in building fast & secure website to make website accessible to anyone. Keep scrolling to read our story.'
+      image='/static/img/pluto-come-back-later.png'
+      isHighlight
     />
 
     {story.map((content, index) => (
