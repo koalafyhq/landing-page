@@ -1,6 +1,5 @@
 import { HeroWithHighlight } from '~/components/Hero'
 import { useState } from 'react'
-//import axios from 'axios'
 import fetch from 'node-fetch'
 
 const IndexPage = () => {
@@ -18,20 +17,6 @@ const IndexPage = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      //console.log(name, email, companyName, referrer, message, madu)
-      // const res = await axios.post('https://koalafy-partner.fn.edgyfn.app', {
-      //   name: name,
-      //   company: companyName,
-      //   email: email,
-      //   referrer: referrer,
-      //   madu: madu,
-      //   detail: message
-      // })
-
-      // if (res.status === 200) {
-      //   console.log(res)
-      //   setSubmitted(true)
-      // }
       const data = {
         name: name,
         company: companyName,
