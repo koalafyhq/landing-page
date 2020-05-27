@@ -1,35 +1,60 @@
 import { HeroWithHighlight } from '~/components/Hero'
-import axios from 'axios'
+import { useState } from 'react'
+//import axios from 'axios'
+import fetch from 'node-fetch'
 
-const IndexPage = ({
-  isLoading = false,
-  submitted = false,
-  name,
-  companyName,
-  email,
-  referrer,
-  message
-}) => {
-  const handleSubmit = event => {
-    event.preventDefault()
-    isLoading = true
-    axios
-      .post('https://koalafy-partner.fn.edgyfn.app', {
+const IndexPage = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [companyName, setCompanyName] = useState('')
+  const [referrer, setReferrer] = useState('Ads')
+  const [madu, setMadu] = useState('')
+  const [message, setMessage] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [showRes, setShowRes] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    setLoading(true)
+    try {
+      //console.log(name, email, companyName, referrer, message, madu)
+      // const res = await axios.post('https://koalafy-partner.fn.edgyfn.app', {
+      //   name: name,
+      //   company: companyName,
+      //   email: email,
+      //   referrer: referrer,
+      //   madu: madu,
+      //   detail: message
+      // })
+
+      // if (res.status === 200) {
+      //   console.log(res)
+      //   setSubmitted(true)
+      // }
+      const data = {
         name: name,
         company: companyName,
         email: email,
         referrer: referrer,
-        madu: '',
+        madu: madu,
         detail: message
+      }
+
+      const res = await fetch('https://koalafy-partner.fn.edgyfn.app', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
       })
-      .then(response => {
-        console.log(response)
-        isLoading = false
-        submitted = true
-      })
-      .catch(function(error) {
-        console.log(error)
-      })
+      if (res.ok) {
+        console.log(res)
+        setSubmitted(true)
+      }
+    } catch (err) {
+      console.error(err)
+    }
+    setLoading(false)
+    setShowRes(true)
   }
   return (
     <main>
@@ -42,11 +67,24 @@ const IndexPage = ({
       <section>
         <div className='_container'>
           <div className='o-container'>
-            {submitted ? (
-              <div className='alert'>
-                <strong>Thanks for being awesome!</strong> We have received your
-                message and would like to thank you for writing to us. One of
-                our colleagues will get back in touch with you soon!
+            {showRes ? (
+              <div
+                className={`alert ${
+                  submitted ? 'alert--success' : 'alert--failed'
+                }`}
+              >
+                {submitted ? (
+                  <>
+                    <strong>Thanks for being awesome!</strong> We have received
+                    your message and would like to thank you for writing to us.
+                    One of our colleagues will get back in touch with you soon!
+                  </>
+                ) : (
+                  <>
+                    <strong>Sorry!</strong> Something went wrong, please try
+                    again later
+                  </>
+                )}
               </div>
             ) : (
               ''
@@ -54,7 +92,13 @@ const IndexPage = ({
             <form onSubmit={handleSubmit}>
               <div className='left'>
                 <label htmlFor='name'>Name</label>
-                <input type='text' value={name} name='name' required />
+                <input
+                  type='text'
+                  value={name}
+                  name='name'
+                  onChange={e => setName(e.target.value)}
+                  required
+                />
               </div>
               <div className='right'>
                 <label htmlFor='company-name'>Company Name</label>
@@ -62,6 +106,7 @@ const IndexPage = ({
                   type='text'
                   value={companyName}
                   name='companyName'
+                  onChange={e => setCompanyName(e.target.value)}
                   required
                 />
               </div>
@@ -73,11 +118,17 @@ const IndexPage = ({
                   value={email}
                   name='email'
                   required
+                  onChange={e => setEmail(e.target.value)}
                 />
               </div>
               <div className='right'>
                 <label htmlFor='referrer'>How did you hear about us?</label>
-                <select value={referrer} name='referrer' required>
+                <select
+                  name='referrer'
+                  required
+                  value={referrer}
+                  onChange={e => setReferrer(e.target.value)}
+                >
                   <option value='Ads'>Ads</option>
                   <option value='Blog Post'>Blog Post</option>
                   <option value='Family'>Family</option>
@@ -90,18 +141,27 @@ const IndexPage = ({
               </div>
               <div className='center'>
                 <label htmlFor='message'>How can we help?</label>
-                <textarea value={message} name='message' required></textarea>
+                <textarea
+                  value={message}
+                  name='message'
+                  onChange={e => setMessage(e.target.value)}
+                  required
+                ></textarea>
               </div>
               <div style={{ display: 'none' }}>
                 <label htmlFor='madu'>
                   If you're human, don't fill this
-                  <input type='text' name='madu' id='madu' />
+                  <input
+                    type='text'
+                    name='madu'
+                    id='madu'
+                    value={madu}
+                    onChange={e => setMadu(e.target.value)}
+                  />
                 </label>
               </div>
               <p>All fields are required to fill</p>
-              <button type='submit'>
-                {isLoading ? 'Loading...' : 'Submit'}
-              </button>
+              <button type='submit'>{loading ? 'Loading...' : 'Submit'}</button>
             </form>
           </div>
         </div>
@@ -185,9 +245,16 @@ const IndexPage = ({
 
             .alert {
               padding: 20px;
-              background-color: #4caf50;
               color: white;
               margin-bottom: 1rem;
+            }
+
+            .alert--success {
+              background-color: #4caf50;
+            }
+
+            .alert--failed {
+              background-color: #ca0b00;
             }
 
             @media screen and (min-width: 640px) {
