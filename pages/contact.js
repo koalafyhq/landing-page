@@ -31,18 +31,18 @@ const IndexPage = () => {
       })
       if (res.ok) {
         setSubmitted(true)
+        setName('')
+        setCompanyName('')
+        setEmail('')
+        setReferrer('Ads')
+        setMessage('')
+        setMadu('')
       }
     } catch (err) {
       console.error(err)
     }
     setLoading(false)
     setShowRes(true)
-    setName('')
-    setCompanyName('')
-    setEmail('')
-    setReferrer('Ads')
-    setMessage('')
-    setMadu('')
   }
   return (
     <main>
