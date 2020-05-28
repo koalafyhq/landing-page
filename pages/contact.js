@@ -210,12 +210,13 @@ const IndexPage = () => {
             select {
               border-color: #666;
               width: 100%;
-              font-size: 1.2rem;
+              font-size: 1rem;
               box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-              border-style: inset;
+              border-style: solid;
               border-width: 2px;
-              padding: 0.2rem;
-              border-radius: 5px;
+              padding: 0.2rem 0.8rem;
+              border-radius: 3px;
+              font-family: inherit;
             }
 
             input {
@@ -223,6 +224,7 @@ const IndexPage = () => {
             }
 
             textarea {
+              padding: 1rem;
               height: 130px;
             }
 
@@ -237,12 +239,14 @@ const IndexPage = () => {
               font-weight: bold;
               background-color: var(--color-primary);
               border: 1px solid var(--color-primary);
+              border-radius: 3px;
               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
               transition: 0.3s all;
               font-family: inherit;
               font-size: 1.3rem;
             }
 
+            button:focus,
             button:hover {
               cursor: pointer;
               transform: translate(0, -3px);
