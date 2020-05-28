@@ -79,58 +79,67 @@ const IndexPage = () => {
               ''
             )}
             <form onSubmit={handleSubmit}>
-              <div className='left'>
-                <label htmlFor='name'>Name</label>
-                <input
-                  type='text'
-                  value={name}
-                  name='name'
-                  onChange={e => setName(e.target.value)}
-                  required
-                />
+              <div className='cf'>
+                <div className='left'>
+                  <label htmlFor='name'>Name</label>
+                  <input
+                    id='name'
+                    type='text'
+                    value={name}
+                    name='name'
+                    onChange={e => setName(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className='right'>
+                  <label htmlFor='company-name'>Company Name</label>
+                  <input
+                    id='company-name'
+                    type='text'
+                    value={companyName}
+                    name='companyName'
+                    onChange={e => setCompanyName(e.target.value)}
+                    required
+                  />
+                </div>
               </div>
-              <div className='right'>
-                <label htmlFor='company-name'>Company Name</label>
-                <input
-                  type='text'
-                  value={companyName}
-                  name='companyName'
-                  onChange={e => setCompanyName(e.target.value)}
-                  required
-                />
-              </div>
-              <div className='left'>
-                <label htmlFor='email'>Email</label>
-                <input
-                  type='email'
-                  pattern='^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$'
-                  value={email}
-                  name='email'
-                  required
-                  onChange={e => setEmail(e.target.value)}
-                />
-              </div>
-              <div className='right'>
-                <label htmlFor='referrer'>How did you hear about us?</label>
-                <select
-                  name='referrer'
-                  required
-                  value={referrer}
-                  onChange={e => setReferrer(e.target.value)}
-                >
-                  <option value='Ads'>Ads</option>
-                  <option value='Blog Post'>Blog Post</option>
-                  <option value='Family'>Family</option>
-                  <option value='Search Engine'>Search Engine</option>
-                  <option value='LinkedIn'>LinkedIn</option>
-                  <option value='Twitter'>Twitter</option>
-                  <option value='Referral'>Referral</option>
-                  <option value='Others'>Others</option>
-                </select>
+              <div className='cf'>
+                <div className='left'>
+                  <label htmlFor='email'>Email</label>
+                  <input
+                    id='email'
+                    type='email'
+                    pattern='^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$'
+                    value={email}
+                    name='email'
+                    required
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                </div>
+                <div className='right'>
+                  <label htmlFor='referrer'>How did you hear about us?</label>
+                  <select
+                    id='referrer'
+                    name='referrer'
+                    required
+                    value={referrer}
+                    onChange={e => setReferrer(e.target.value)}
+                  >
+                    <option value='Ads'>Ads</option>
+                    <option value='Blog Post'>Blog Post</option>
+                    <option value='Family'>Family</option>
+                    <option value='Search Engine'>Search Engine</option>
+                    <option value='LinkedIn'>LinkedIn</option>
+                    <option value='Twitter'>Twitter</option>
+                    <option value='Referral'>Referral</option>
+                    <option value='Others'>Others</option>
+                  </select>
+                </div>
               </div>
               <div className='center'>
                 <label htmlFor='message'>How can we help?</label>
                 <textarea
+                  id='message'
                   value={message}
                   name='message'
                   onChange={e => setMessage(e.target.value)}
@@ -156,6 +165,13 @@ const IndexPage = () => {
         </div>
         <style jsx>
           {`
+            .cf:before,
+            .cf:after {
+              clear: both;
+              content: '';
+              display: table;
+            }
+
             ._container {
               padding: 3rem 1rem;
               display: table;
