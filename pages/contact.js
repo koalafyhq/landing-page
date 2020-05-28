@@ -168,7 +168,9 @@ const IndexPage = () => {
                 </label>
               </div>
               <p>All fields are required to fill</p>
-              <button type='submit'>{loading ? 'Loading...' : 'Submit'}</button>
+              <button type='submit' disabled={loading}>
+                {loading ? 'Loading...' : 'Submit'}
+              </button>
             </form>
           </div>
         </div>
@@ -253,6 +255,13 @@ const IndexPage = () => {
               transition: 0.3s all;
               font-family: inherit;
               font-size: 1.3rem;
+            }
+
+            button:disabled {
+              background-color: #ccc;
+              border-color: #ccc;
+              color: #eee;
+              pointer-events: none;
             }
 
             button:focus,
