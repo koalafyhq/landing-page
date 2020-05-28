@@ -23,16 +23,14 @@ const IndexPage = () => {
         email: email,
         referrer: referrer,
         madu: madu,
-        detail: message
+        notes: message
       }
-
       const res = await fetch('https://koalafy-partner.fn.edgyfn.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       })
       if (res.ok) {
-        console.log(res)
         setSubmitted(true)
       }
     } catch (err) {
@@ -40,6 +38,12 @@ const IndexPage = () => {
     }
     setLoading(false)
     setShowRes(true)
+    setName('')
+    setCompanyName('')
+    setEmail('')
+    setReferrer('Ads')
+    setMessage('')
+    setMadu('')
   }
   return (
     <main>
