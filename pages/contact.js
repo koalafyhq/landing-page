@@ -14,7 +14,9 @@ const IndexPage = () => {
 
   const handleSubmit = async e => {
     e.preventDefault()
+
     setLoading(true)
+
     try {
       const data = {
         name: name,
@@ -24,11 +26,13 @@ const IndexPage = () => {
         madu: madu,
         notes: message
       }
+
       const res = await window.fetch('https://koalafy-partner.fn.edgyfn.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       })
+
       if (res.ok) {
         setSubmitted(true)
         setName('')
@@ -41,9 +45,15 @@ const IndexPage = () => {
     } catch (err) {
       console.error(err)
     }
+
     setLoading(false)
     setShowRes(true)
+
+    setTimeout(() => {
+      setShowRes(false)
+    }, 5000)
   }
+
   return (
     <main>
       <HeroWithHighlight
