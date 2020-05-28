@@ -1,6 +1,5 @@
 import { HeroWithHighlight } from '~/components/Hero'
 import { useState } from 'react'
-import fetch from 'node-fetch'
 
 const IndexPage = () => {
   const [name, setName] = useState('')
@@ -25,7 +24,7 @@ const IndexPage = () => {
         madu: madu,
         notes: message
       }
-      const res = await fetch('https://koalafy-partner.fn.edgyfn.app', {
+      const res = await window.fetch('https://koalafy-partner.fn.edgyfn.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
