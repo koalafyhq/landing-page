@@ -42,7 +42,10 @@ const Footer = () => {
               <h3>Company</h3>
               <div className='c-links'>
                 {companyLinks.map(companyLink => (
-                  <Link href={companyLink.toLowerCase()} key={companyLink}>
+                  <Link
+                    href={companyLink.replace(/\s+/g, '-').toLowerCase()}
+                    key={companyLink}
+                  >
                     <a>{companyLink}</a>
                   </Link>
                 ))}
