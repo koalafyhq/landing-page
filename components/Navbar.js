@@ -145,7 +145,7 @@ const Navbar = () => {
           >
             <h4>Get in touch</h4>
             <p>
-              <a href='mailto:hi@koalafy.co'>hi@koalafy.co</a>
+              <a href='mailto:hi@koalafyhq.com'>hi@koalafyhq.com</a>
             </p>
           </Menu>
         </div>

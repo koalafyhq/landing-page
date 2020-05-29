@@ -2,7 +2,7 @@ import Link from 'next/link'
 import ButtonLink from '~/components/ButtonLink'
 
 const Footer = () => {
-  const companyLinks = ['Home', 'About', 'Contact', 'Blog', 'Services']
+  const companyLinks = ['About', 'Contact', 'Blog', 'Services', 'Open Source']
   const services = [
     'JAMStack Website',
     'Progressive Web App',
@@ -75,7 +75,7 @@ const Footer = () => {
             <p>
               &copy; {new Date().getFullYear()},{' '}
               <Link href='/'>
-                <a className='u-underline'>koalafy.co</a>
+                <a className='u-underline'>koalafyhq.com</a>
               </Link>{' '}
               - All right reserved, Icons by{' '}
               <a
