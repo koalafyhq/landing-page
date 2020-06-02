@@ -51,15 +51,25 @@ const HeroBase = ({ children }) => (
   </div>
 )
 
-export const HeroCenter = ({ title, description }) => (
+export const HeroCenter = ({ title, description, extraDescription }) => (
   <>
     <HeroBase>
       <div className='center'>
         <h2>{title}</h2>
         <p>{description}</p>
+        {extraDescription ? (
+          <p className='c-text__extra'>{extraDescription}</p>
+        ) : (
+          ''
+        )}
       </div>
     </HeroBase>
     <style jsx global>{`
+      p.c-text__extra {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+      }
+
       .c-hero__content {
         height: 350px;
       }
@@ -72,7 +82,7 @@ export const HeroCenter = ({ title, description }) => (
 
       @media screen and (min-width: 640px) {
         .center {
-          width: 60%;
+          width: 50%;
         }
       }
     `}</style>
