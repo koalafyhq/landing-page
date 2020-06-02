@@ -13,13 +13,18 @@ const Card = ({ title, description, image }) => {
       <style jsx>{`
         div {
           width: 100%;
-          padding: 1rem 2rem 1rem 0;
+          padding: 1rem 2rem;
+        }
+
+        img {
+          width: 100%;
         }
 
         h3 {
           color: var(--color-primary);
           letter-spacing: -1px;
           font-size: 2rem;
+          margin-top: 1rem;
           margin-bottom: 0.5rem;
         }
 

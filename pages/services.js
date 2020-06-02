@@ -111,10 +111,10 @@ const Section = ({
     <div className={`_container ${isLast ? '_container--has-border' : ''}`}>
       <div className='o-container'>
         {isTitle ? (
-          <>
+          <div className='_section-title'>
             <h2>{title}</h2>
             <p>{description}</p>
-          </>
+          </div>
         ) : (
           ''
         )}
@@ -145,6 +145,10 @@ const Section = ({
         ._container--has-border {
           border-top: 1px solid;
           border-bottom: 1px solid;
+        }
+
+        ._section-title {
+          padding: 0 2rem;
         }
 
         @media screen and (min-width: 640px) {
