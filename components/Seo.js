@@ -1,13 +1,9 @@
 import Head from 'next/head'
 import { defaultOgImage, baseURL } from '~/config'
 
-const Seo = ({
-  title,
-  description,
-  type = 'Article',
-  shareImage,
-  canonical
-}) => {
+const Seo = ({ title, description, type = 'Article', shareImage }) => {
+  const canonical =
+    typeof window !== 'undefined' ? window.location.pathname : ''
   const ogImage = shareImage || defaultOgImage
   const jsonLd = {
     '@context': `https://schema.org/`,
@@ -46,6 +42,7 @@ const Seo = ({
       <meta property='og:title' content={title} />
       <meta property='og:description' content={description} />
       <meta property='og:url' content={canonical} />
+      <meta property='og:image' content={defaultOgImage} />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:url' content={canonical} />
