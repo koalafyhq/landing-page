@@ -139,6 +139,11 @@ const SectionCTA = () => (
 
 const IndexPage = () => (
   <main>
+    <Seo
+      title='Open Source'
+      description='Koalafy rely on open source software and it’s at the heart of all we do — and we like to give back to the community.'
+    />
+
     <HeroCenter
       title='Open Source'
       description='Koalafy rely on open source software and it’s at the heart of all we do —

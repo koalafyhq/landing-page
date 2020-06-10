@@ -1,6 +1,7 @@
 import { HeroCenter } from '~/components/Hero'
 import Card from '~/components/Card'
 import ButtonLink from '~/components/ButtonLink'
+import Seo from '~/components/Seo'
 
 const services = [
   {
@@ -168,6 +169,11 @@ const Section = ({
 const IndexPage = () => {
   return (
     <main>
+      <Seo
+        title='Our best offers'
+        description="Let's make your business better than before, learn more which website that fit with your own need"
+      />
+
       <HeroCenter
         title='Our best offers'
         description="Let's make your business better than before, learn more which website that fit with your own need"
