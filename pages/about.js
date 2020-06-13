@@ -7,7 +7,7 @@ const story = [
   {
     title: 'We love the web',
     description:
-      "It's all begin here, while we visit our favorite website. Like the rest of us, we surely have our own favorite website that we’re never get bored to visit everyday.",
+      'It all begins here, while we visit our favorite website. Like the rest of us, we surely have our own favorite website that we’re never get bored to visit everyday.',
     image: '/static/img/lime-order-complete.png'
   },
   {
@@ -23,7 +23,7 @@ const story = [
     image: '/static/img/lime-searching.png'
   },
   {
-    title: 'And then we know',
+    title: 'And then we realize',
     description:
       'Not all websites are created with performance in mind. Sometimes “they” only focus on SEO, or “done is better than anything”. They forgot that the “end-consumer” of the web is the user, not Search Engine nor stakeholders — But not us.',
     image: '/static/img/lime-list-is-empty.png'
@@ -31,7 +31,7 @@ const story = [
   {
     title: 'So here we are!',
     description:
-      'We are passionate in building fast & secure website to make website accessible to anyone, in any browsers; any network condition, without borders. We know how SEO works, we know how to leveraging Developer Experience without killing the User Experience, and we use modern technologies. You got the point. Advocating is not enough, we need to do a direct action.',
+      "We are passionate in building fast & secure website to make website accessible to everyone, in any browsers; any network condition, without borders. We know how SEO works, we know how to leveraging Developer Experience without killing the User Experience, and we use modern technologies. You've got the point. Advocating is not enough, we need to do a direct action.",
     image: '/static/img/lime-sign-in.png'
   }
 ]
@@ -107,13 +107,13 @@ const IndexPage = () => (
   <main>
     <Seo
       title='About Koalafy'
-      description='Make a web faster & safer — We are passionate in building fast & secure website to make website accessible to anyone. Keep scrolling to read our story.'
+      description='Make a web faster & safer — We are passionate in building fast & secure website to make website accessible to everyone. Keep scrolling to read our story.'
     />
 
     <HeroWithHighlight
       title='Make a web '
       highlight='faster & safer'
-      description='We are passionate in building fast & secure website to make website accessible to anyone. Keep scrolling to read our story.'
+      description='We are passionate in building fast & secure website to make website accessible to everyone. Keep scrolling to read our story.'
       image='/static/img/pluto-come-back-later.png'
       isHighlight
     />
@@ -145,16 +145,16 @@ const IndexPage = () => (
       <div className='o-container'>
         <h3>And yes, security is essential.</h3>
         <p>
-          Hackers loves Database and Server, we all know it. JAMStack will help
-          make your website more secure since its all about static, no server &
-          database runtime required.
+          Hackers love Database and Server, we all know it. JAMStack will help
+          to make your website more secure since it's all about static, no
+          server & database runtime required.
         </p>
         <p>
           Also, by using our{' '}
           <Link href='/services/dedicated-hosting'>
             <a className='u-underline'>Dedicated Hosting</a>
           </Link>{' '}
-          services, we can help to make your website much more secure, more
+          service, we can help to make your website much more secure, more
           reliable and fast.
         </p>
       </div>

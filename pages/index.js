@@ -14,7 +14,7 @@ const SectionOne = ({ isImage }) => (
       />
     ) : (
       <>
-        <h3>Slow website is slow & boring</h3>
+        <h3>Slow websites are boring</h3>
         <p>Users hate waiting</p>
         <p>
           Either your "backend" is generating the page for you, fetching the
@@ -22,7 +22,7 @@ const SectionOne = ({ isImage }) => (
           when it will be done, until they’re not.
         </p>
         <p>
-          Check out why this is bad and yes we can fix this by click button
+          Check out why this is bad and yes we can fix this by click the button
           below
         </p>
         <ButtonLink pilled={true} href='/services/jamstack'>
@@ -37,8 +37,8 @@ const SectionTwo = () => (
   <>
     <h3>Security is essential</h3>
     <p>
-      You don’t want your site is hacked just because there are security holes
-      or outdated plugins installed in your system
+      You don’t want your site is being hacked just because there are security
+      holes or outdated plugins installed in your system
     </p>
     <p>
       <Link href='/services/security'>
@@ -112,7 +112,7 @@ const SectionFive = ({ isImage }) => (
             <a className='u-underline'>services page</a>
           </Link>
         </h3>
-        <p>Learn more what we do & don’t, in case you need to.</p>
+        <p>Learn more about our do's & don’ts, in case you need to.</p>
         <p>
           There is{' '}
           <Link href='/about'>
@@ -147,10 +147,10 @@ const SectionSix = () => (
     <h3>You’ve reached here, now what?</h3>
     <p>
       We try our best, from architecting IA; choosing honest & friendly
-      copywriting, until to make this website as fast as we’ve promised earlier.
+      copywriting, until make the website as fast as we’ve promised earlier.
     </p>
     <p>
-      Deliberate to not mention that we are also good in SEO since SEO is the
+      Deliberate not to mention that we are also good in SEO since SEO is the
       essential aspect for digital business after security.
     </p>
     <ButtonLink pilled={true} href='/contact'>

@@ -13,13 +13,13 @@ const services = [
   {
     title: 'Progressive Web App',
     description:
-      'PWA is a techniques & patterns, but become the best selling point for non-techy person. PWA is suitable for your mobile web app that need much user interaction',
+      'PWA is a techniques & patterns, but become the best selling point for non-techy person. PWA is suitable for your mobile web app that need more user interactions',
     image: '/static/img/rec-blue.png'
   },
   {
     title: 'Single Page App',
     description:
-      'Suitable for back-office app like internal dashboard. If you need an application used to administer operations that are not related to any direct sales effort, SPA is for you.',
+      'Suitable for back-office app like internal dashboard. If you need an application for administer operations that are not related to any direct sales effort, SPA is for you.',
     image: '/static/img/rec-tosca.png'
   }
 ]
@@ -28,7 +28,7 @@ const projectExist = [
   {
     title: 'Premium Support',
     description:
-      'Need help with your existing project? Wonder why your website is slow? Your conversion rate is low? Or anyting? We got you.',
+      "Need help with your existing project? Wonder why your website is slow? Your conversion rate is low? Or anything else? We've got you covered.",
     image: '/static/img/rec-purple.png'
   },
   {
@@ -40,7 +40,7 @@ const projectExist = [
   {
     title: 'Custom Needs',
     description:
-      'Need us to solve your own problem? We can help. Let’s talk, tell your problem.',
+      'Need us to solve your own problem? We can help. Let’s talk, tell us your problem.',
     image: '/static/img/rec-red.png'
   }
 ]
@@ -76,7 +76,7 @@ const SectionCTA = () => (
       {`
         p {
           color: var(--color-white);
-          font-size: 1rem;
+          font-size: 1.1rem;
         }
 
         h2 {
@@ -132,7 +132,7 @@ const Section = ({
 
         p {
           color: var(--color-white);
-          font-size: 1rem;
+          font-size: 1.1rem;
           margin-bottom: 1rem;
         }
 
