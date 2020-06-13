@@ -1,5 +1,6 @@
 import { HeroCenter } from '~/components/Hero'
 import ButtonLink from '~/components/ButtonLink'
+import Seo from '~/components/Seo'
 
 const Section = ({
   title,
@@ -139,6 +140,11 @@ const SectionCTA = () => (
 
 const IndexPage = () => (
   <main>
+    <Seo
+      title='Open Source at Koalafy'
+      description='Koalafy rely on open source software and it’s at the heart of all we do — and we like to give back to the community.'
+    />
+
     <HeroCenter
       title='Open Source'
       description='Koalafy rely on open source software and it’s at the heart of all we do —

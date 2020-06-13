@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Hero from '~/components/Hero'
 import Section from '~/components/Section'
 import ButtonLink from '~/components/ButtonLink'
+import Seo from '~/components/Seo'
 
 const SectionOne = ({ isImage }) => (
   <>
@@ -161,6 +162,11 @@ const SectionSix = () => (
 const IndexPage = () => {
   return (
     <main>
+      <Seo
+        title='Koalafy | Partnering with best in class Frontend Engineers in town'
+        description='JAMStack done right. Build blazing fast & secure website to leveraging your business and digital transformation'
+      />
+
       <Hero
         title='JAMStack done right'
         description='build blazing fast & secure website to leveraging your business

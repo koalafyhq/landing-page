@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { HeroWithHighlight } from '~/components/Hero'
+import Seo from '~/components/Seo'
 
 const story = [
   {
@@ -104,6 +105,11 @@ const Section = ({
 
 const IndexPage = () => (
   <main>
+    <Seo
+      title='About Koalafy'
+      description='Make a web faster & safer — We are passionate in building fast & secure website to make website accessible to anyone. Keep scrolling to read our story.'
+    />
+
     <HeroWithHighlight
       title='Make a web '
       highlight='faster & safer'

@@ -1,5 +1,6 @@
 import { HeroWithHighlight } from '~/components/Hero'
 import { useState } from 'react'
+import Seo from '~/components/Seo'
 
 const IndexPage = () => {
   const [name, setName] = useState('')
@@ -56,6 +57,11 @@ const IndexPage = () => {
 
   return (
     <main>
+      <Seo
+        title='Koalafy | Let’s work together'
+        description='Launching a new project? Need help on an existing project? We’d love to talk.'
+      />
+
       <HeroWithHighlight
         title='Let’s work together'
         description='Launching a new project? Need help on an existing project? We’d love to talk.'
