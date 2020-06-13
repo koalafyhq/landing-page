@@ -165,7 +165,6 @@ const IndexPage = () => {
       <Seo
         title='Koalafy | Partnering with best in class Frontend Engineers in town'
         description='JAMStack done right. Build blazing fast & secure website to leveraging your business and digital transformation'
-        canonical='/'
       />
 
       <Hero
