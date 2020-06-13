@@ -58,7 +58,7 @@ const IndexPage = () => {
   return (
     <main>
       <Seo
-        title='Let’s work together'
+        title='Koalafy | Let’s work together'
         description='Launching a new project? Need help on an existing project? We’d love to talk.'
       />
 

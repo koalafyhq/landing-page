@@ -170,7 +170,7 @@ const IndexPage = () => {
   return (
     <main>
       <Seo
-        title='Our best offers'
+        title='Koalafy | Our best offers'
         description="Let's make your business better than before, learn more which website that fit with your own need"
       />
 

@@ -106,8 +106,8 @@ const Section = ({
 const IndexPage = () => (
   <main>
     <Seo
-      title='Make a web faster & safer'
-      description='We are passionate in building fast & secure website to make website accessible to anyone. Keep scrolling to read our story.'
+      title='About Koalafy'
+      description='Make a web faster & safer — We are passionate in building fast & secure website to make website accessible to anyone. Keep scrolling to read our story.'
     />
 
     <HeroWithHighlight
