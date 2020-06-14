@@ -65,7 +65,7 @@ const CardProject = () =>
     />
   ))
 
-const SectionCTA = () => (
+export const SectionCTA = () => (
   <div className='__content'>
     <h2>Let’s do business together</h2>
     <p>We are happy to help your business to deliver fast & secure website</p>
