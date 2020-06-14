@@ -28,13 +28,12 @@ export const MDXComponents = {
     <ul {...props}>
       {children}
       <style jsx>{`
-      ul {
-        margin-top: 1.5rem;
-        margin-bottom: 1.5rem;
-        padding-left: 1.5rem;
-        line-height: 1.8rem;
-      }
-      </style>
+        ul {
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+          padding-left: 1.5rem;
+          line-height: 1.8rem;
+        }
       `}</style>
     </ul>
   ),
