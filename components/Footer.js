@@ -43,7 +43,7 @@ const Footer = () => {
               <div className='c-links'>
                 {companyLinks.map(companyLink => (
                   <Link
-                    href={companyLink.replace(/\s+/g, '-').toLowerCase()}
+                    href={`/${companyLink.replace(/\s+/g, '-').toLowerCase()}`}
                     key={companyLink}
                   >
                     <a>{companyLink}</a>
@@ -56,7 +56,7 @@ const Footer = () => {
               <div className='c-links'>
                 {services.map(service => (
                   <Link
-                    href={`services/${service
+                    href={`/services/${service
                       .replace(/\s+/g, '-')
                       .toLowerCase()}`}
                     key={service}
