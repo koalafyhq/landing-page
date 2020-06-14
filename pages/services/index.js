@@ -17,7 +17,7 @@ const services = [
     image: '/static/img/rec-blue.png'
   },
   {
-    title: 'Single Page App',
+    title: 'Single Page Application',
     description:
       'Suitable for back-office app like internal dashboard. If you need an application for administer operations that are not related to any direct sales effort, SPA is for you.',
     image: '/static/img/rec-tosca.png'
@@ -65,7 +65,7 @@ const CardProject = () =>
     />
   ))
 
-const SectionCTA = () => (
+export const SectionCTA = () => (
   <div className='__content'>
     <h2>Let’s do business together</h2>
     <p>We are happy to help your business to deliver fast & secure website</p>

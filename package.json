@@ -10,6 +10,8 @@
     "export": "next export"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.5",
+    "@next/mdx": "^9.4.4",
     "next": "^9.2.2",
     "nprogress": "^0.2.0",
     "react": "^16.13.0",
