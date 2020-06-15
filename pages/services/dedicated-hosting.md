@@ -1,11 +1,8 @@
-import { MDXWrapper } from '~/components/MDXWrapper'
-
-export const meta = {
-title: "Dedicated Hosting",
-description: "We are very enthusiastic and highly interested on making internet faster, safer, and more accessible."
-}
-
-<MDXWrapper {...meta}>
+---
+title: Dedicated Hosting
+description: We are very enthusiastic and highly interested on making internet faster, safer, and more accessible.
+layout: service
+---
 
 To make it **faster**, by using Open Technologies, we're building a CDN with Indonesia as a first-class citizen.
 
@@ -33,5 +30,3 @@ services, such as:
 All our projects are released under Open Source principles and always will be. You're never
 vendor-locked under our services beside our platform are open source and also it's just an abstraction
 of our current (and regular) workflow on how we build & deploy the website.
-
-</MDXWrapper>
