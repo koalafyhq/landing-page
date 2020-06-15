@@ -1,7 +1,24 @@
 import Seo from '~/components/Seo'
+import Paper from '~/components/Paper'
+
 import { SectionCTA } from '~/pages/services'
 
 export const MDXComponents = {
+  wrapper: ({ children, frontMatter, ...props }) => {
+    const { title, description, layout } = frontMatter
+
+    const seoTitle =
+      layout === 'service'
+        ? `${title} service | Koalafy`
+        : `${title} | Koalafy blog`
+
+    return (
+      <MDXWrapper {...frontMatter} {...props}>
+        <Seo title={seoTitle} description={description} />
+        {children}
+      </MDXWrapper>
+    )
+  },
   h1: ({ children, ...props }) => (
     <h1 {...props}>
       <style jsx>{`
@@ -12,6 +29,29 @@ export const MDXComponents = {
       `}</style>
       {children}
     </h1>
+  ),
+  hr: ({ children, ...props }) => (
+    <>
+      <hr {...props} />
+      <style jsx>{`
+        hr {
+          border: 0;
+          border-bottom: 1px solid #bbb;
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      `}</style>
+    </>
+  ),
+  a: ({ children, ...props }) => (
+    <a {...props}>
+      {children}
+      <style jsx>{`
+        a {
+          text-decoration: underline;
+        }
+      `}</style>
+    </a>
   ),
   p: ({ children, ...props }) => (
     <p {...props}>
@@ -37,6 +77,28 @@ export const MDXComponents = {
       `}</style>
     </ul>
   ),
+  img: props => (
+    <>
+      <img {...props} />
+      <style jsx>{`
+        img {
+          border: 2px solid var(--color-secondary);
+          width: 100%;
+          height: 100%;
+        }
+      `}</style>
+    </>
+  ),
+  pre: ({ children, ...props }) => (
+    <pre {...props}>
+      {children}
+      <style jsx>{`
+        pre {
+          margin-bottom: 1.5rem;
+        }
+      `}</style>
+    </pre>
+  ),
   li: ({ children, ...props }) => (
     <li {...props}>
       {children}
@@ -53,15 +115,11 @@ export const MDXComponents = {
 
 export const MDXWrapper = ({ children, ...props }) => (
   <article>
-    <Seo
-      title={`${props.title} service | Koalafy`}
-      description={props.description}
-    />
     <section>
       <h1>{props.title}</h1>
       <p>{props.description}</p>
     </section>
-    <div className='_service-container'>{children}</div>
+    <Paper>{children}</Paper>
     <div className='_service-cta'>
       <SectionCTA />
     </div>
@@ -70,7 +128,6 @@ export const MDXWrapper = ({ children, ...props }) => (
         article {
           color: var(--color-white);
           background-color: var(--color-secondary);
-          font-size: 16px;
           padding-bottom: 4rem;
           border-bottom: 1px solid var(--color-black);
           min-height: 100vh;
@@ -94,30 +151,12 @@ export const MDXWrapper = ({ children, ...props }) => (
           line-height: 1.6rem;
         }
 
-        ._service-container {
-          color: var(--color-black);
-          background-color: var(--color-white);
-          padding: 2rem 1rem;
-          max-width: 1020px;
-          margin: auto;
-          margin-bottom: 6rem;
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 -10px 0 -5px #eee,
-            0 -10px 1px -4px rgba(0, 0, 0, 0.15), 0 -20px 0 -10px #eee,
-            0 -20px 1px -9px rgba(0, 0, 0, 0.15), 0 10px 0 -5px #eee,
-            0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px #eee,
-            0 20px 1px -9px rgba(0, 0, 0, 0.15);
-        }
-
         ._service-cta {
           padding-top: 3rem;
           border-top: 1px solid var(--color-black);
         }
 
         @media screen and (min-width: 640px) {
-          article {
-            font-size: 18px;
-          }
-
           h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
@@ -125,11 +164,6 @@ export const MDXWrapper = ({ children, ...props }) => (
 
           section {
             padding: 4rem 0;
-          }
-
-          ._service-container {
-            padding: 4rem;
-            padding-right: 8rem;
           }
         }
       `}
