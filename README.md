@@ -1,7 +1,6 @@
 # Koalafy 🐨
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![build status](https://gitlab.com/koalafy/landing-page/badges/master/pipeline.svg)](https://gitlab.com/koalafy/landing-page)
 
 The landing page.
 
@@ -18,7 +17,7 @@ The landing page.
 To prevent conflict in module resolution, make sure to use [Yarn](https://yarnpkg.com)
 so `yarn.lock` won't conflict with `package-lock.json`.
 
-- Clone repo: `git clone git@gitlab.com:koalafy/landing-page.git`
+- Clone repo: `git clone git@github.com:koalafyhq/landing-page.git`
 - Install dependencies: `yarn`
 - Start development server: `yarn dev`
 
