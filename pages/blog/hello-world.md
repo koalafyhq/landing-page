@@ -6,8 +6,8 @@ date: 06/15/2020
 author: koalafy
 ---
 
-As this post is published, we'll start to writing about what we learn; research, discover, and release. Our main topics
-will covering about Web Development, Web Performance, System Administration, and some lower-level language
+As this post published, we'll start to write about our research and what we've learned; discovered and released. Our main topics
+will cover about Web Development, Web Performance, System Administration, and some lower-level language
 like C, C++, Go, and Rust.
 
 ![Server image](https://s3.edgyfn.app/koalafy/blog/img/server.jpg)
@@ -25,17 +25,17 @@ Basically our main tech stacks are:
 - Redis
 - Postgresql
 
-So probably we'll talk about it too. We also have interest on particular _bleeding-edge_
-technologies like:
+So probably we'll talk about them as well. We also have interest on particular _bleeding-edge_
+technologies such as:
 
 - Edge Computing
 - Cloud Computing
 - Serverless Computing
 - Container Technologies
 
-And will share what learn about that here.
+And we will share what've learned about those technologies here.
 
-Currently we don't have any Newsletter subscription services (and have no plan to support it)
+Currently we don't have any Newsletter Subscription service (and have no plan to support it)
 because we won't collect your email address. But you can subscribe to our [RSS Feed](/blog/rss)
 instead.
 
