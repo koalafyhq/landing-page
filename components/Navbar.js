@@ -50,7 +50,7 @@ const HamburgerMenu = ({ isFocus, onClick }) => (
 const Menu = ({ onClick, isVisible, menus, children }) => (
   <div className={`c-menu ${isVisible ? 'c-menu--is-visible' : ''}`}>
     {menus.map(menu => (
-      <Link href={menu === 'Home' ? '/' : menu.toLowerCase()} key={menu}>
+      <Link href={menu === 'Home' ? '/' : '/' + menu.toLowerCase()} key={menu}>
         <a onClick={onClick}>{menu}</a>
       </Link>
     ))}
@@ -145,7 +145,7 @@ const Navbar = () => {
           >
             <h4>Get in touch</h4>
             <p>
-              <a href='mailto:hi@koalafy.co'>hi@koalafy.co</a>
+              <a href='mailto:hi@koalafyhq.com'>hi@koalafyhq.com</a>
             </p>
           </Menu>
         </div>

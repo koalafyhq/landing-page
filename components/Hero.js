@@ -11,7 +11,7 @@ const HeroBase = ({ children }) => (
         width: 100%;
         background-color: var(--color-secondary);
         color: var(--color-white);
-        text-align: center;
+         text-align: center;
       }
 
       .c-hero__content {
@@ -33,6 +33,10 @@ const HeroBase = ({ children }) => (
         color: var(--color-white);
       }
 
+      .c-hero--color-primary h2 {
+        color: var(--color-primary);
+      }
+
       .c-hero p {
         font-size: 1.3rem;
         margin-top: 1rem;
@@ -47,20 +51,61 @@ const HeroBase = ({ children }) => (
   </div>
 )
 
+export const HeroCenter = ({ title, description, extraDescription }) => (
+  <>
+    <HeroBase>
+      <div className='center'>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        {extraDescription ? (
+          <p className='c-text__extra'>{extraDescription}</p>
+        ) : (
+          ''
+        )}
+      </div>
+    </HeroBase>
+    <style jsx global>{`
+      p.c-text__extra {
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .c-hero__content {
+        height: 350px;
+      }
+
+      .center {
+        text-align: center;
+        width: 100%;
+        margin: auto;
+      }
+
+      @media screen and (min-width: 640px) {
+        .center {
+          width: 50%;
+        }
+      }
+    `}</style>
+  </>
+)
+
 export const HeroWithHighlight = ({
   title,
   description,
   highlight,
-  background
+  image,
+  isHighlight
 }) => (
   <HeroBase>
-    <div className='c-hero--color-white'>
+    <div
+      className={isHighlight ? 'c-hero--color-white' : 'c-hero--color-primary'}
+    >
       <h2>
         {title} <span className='highlight'>{highlight}</span>
       </h2>
       <p>{description}</p>
       <div className='o-image-container'>
-        <img src='/static/img/pluto-come-back-later.png' />
+        <img src={image} />
       </div>
       <style jsx>{`
         .o-image-container {
@@ -89,7 +134,7 @@ export const HeroWithHighlight = ({
 
         @media screen and (min-width: 640px) {
           p {
-            width: 55%;
+            width: 58%;
             margin-bottom: 15rem;
           }
 

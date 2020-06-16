@@ -3,6 +3,9 @@ import App from 'next/app'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 
+import { MDXProvider } from '@mdx-js/react'
+import { MDXComponents } from '~/components/MDXWrapper'
+
 import Navbar from '~/components/Navbar'
 import Footer from '~/components/Footer'
 
@@ -33,7 +36,9 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <Layout>
-        <Component {...pageProps} />
+        <MDXProvider components={MDXComponents}>
+          <Component {...pageProps} />
+        </MDXProvider>
       </Layout>
     )
   }
