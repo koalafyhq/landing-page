@@ -1,11 +1,8 @@
-import { MDXWrapper } from '~/components/MDXWrapper'
-
-export const meta = {
-title: "JAMStack Website",
-description: "JAMStack is an acronym for JavaScript; APIs, Markup Stack where basically websites are designed with dynamic changes in mind but statically rendered.",
-}
-
-<MDXWrapper {...meta}>
+---
+title: JAMStack Website
+description: 'JAMStack is an acronym for JavaScript; APIs, Markup Stack where basically websites are designed with dynamic changes in mind but statically rendered.'
+layout: service
+---
 
 JAMStack websites are suitable for company profile, marketing page, microsite, blog, and anything
 that have no frequent minor change but need "dynamic functionality" such as form handling,
@@ -31,5 +28,3 @@ Technologies we're using for building JAMStack website are:
 - Wordpress & Ghost for the backend (CMS)
 
 If you have any custom need, let us know!
-
-</MDXWrapper>

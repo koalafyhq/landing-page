@@ -1,11 +1,8 @@
-import { MDXWrapper } from '~/components/MDXWrapper'
-
-export const meta = {
-title: "Single Page Application",
-description: "Build a reliable & scalable web application by pushing the web limit"
-}
-
-<MDXWrapper {...meta}>
+---
+title: Single Page Application
+description: Build a reliable & scalable web application by pushing the web limit
+layout: service
+---
 
 Single Page Application (or SPA for short) is suitable for back-office app like internal dashboard. If you need an application used to administer operations that are not related to any direct sales effort, SPA is for you.
 
@@ -19,5 +16,3 @@ Technologies we use for building PWA are:
 - React, Vue and Svelte for base UI Library/Framework
 
 And as always, if you have any custom needs, just let us know!
-
-</MDXWrapper>

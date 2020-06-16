@@ -1,5 +1,8 @@
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/
+const withMDX = require('./lib/mdx-loader')({
+  extension: /\.mdx?$/,
+  options: {
+    rehypePlugins: [require('@mapbox/rehype-prism')]
+  }
 })
 
 module.exports = withMDX({

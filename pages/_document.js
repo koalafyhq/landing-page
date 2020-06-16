@@ -15,6 +15,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap'
           />
           <link rel='stylesheet' href='/static/css/global.css' />
+          <link rel='stylesheet' href='/static/css/prism-tomorrow.css' />
           <link rel='icon' type='image/png' href='/static/img/icon.png' />
         </Head>
         <body>

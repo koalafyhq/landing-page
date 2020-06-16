@@ -1,11 +1,8 @@
-import { MDXWrapper } from '~/components/MDXWrapper'
-
-export const meta = {
-title: "Progressive Web App",
-description: "Build a reliable & installable web application and pushing the web limit"
-}
-
-<MDXWrapper {...meta}>
+---
+title: Progressive Web App
+description: Build a reliable & installable web application and pushing the web limit
+layout: service
+---
 
 Progressive Web App (or PWA for short) is **a set of principles** of build a **capable**; **reliable**,
 and **installable** web application. This is suitable for application that has complex interaction,
@@ -32,5 +29,3 @@ Technologies we use for building PWA are:
 - C, C++, Rust, and Go for WebAssembly
 
 And as always, if you have any custom needs, just let us know!
-
-</MDXWrapper>
