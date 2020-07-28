@@ -7,16 +7,18 @@
     "start": "next start",
     "dev": "next dev",
     "build": "next build",
-    "export": "next export"
+    "export": "node ./build-blog.js && next export"
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.4.0",
     "@mdx-js/loader": "^1.6.5",
+    "front-matter": "^4.0.2",
     "gray-matter": "^4.0.2",
     "next": "^9.2.2",
     "nprogress": "^0.2.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "rss": "^1.2.2",
     "stringify-object": "^3.3.0"
   },
   "devDependencies": {
@@ -27,7 +29,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "yarn test"
     }
   }
 }
