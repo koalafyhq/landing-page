@@ -6,12 +6,5 @@ const withMDX = require('./lib/mdx-loader')({
 })
 
 module.exports = withMDX({
-  pageExtensions: ['md', 'mdx', 'jsx', 'js'],
-  webpack: config => {
-    return Object.assign({}, config, {
-      node: {
-        fs: 'empty'
-      }
-    })
-  }
+  pageExtensions: ['md', 'mdx', 'jsx', 'js']
 })
