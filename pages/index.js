@@ -25,7 +25,7 @@ const SectionOne = ({ isImage }) => (
           Check out why this is bad and yes we can fix this by click the button
           below
         </p>
-        <ButtonLink pilled={true} href='/services/jamstack'>
+        <ButtonLink pilled={true} href='/services/jamstack-website'>
           Learn More
         </ButtonLink>
       </>
